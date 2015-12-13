@@ -7,7 +7,6 @@ cols <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Volta
 # Read in data
 data <- read.table(file="household_power_consumption.txt", sep=";", skip=1, header=FALSE, na.strings=c("?"))
 
-
 # Set column names
 names(data) <- cols
 
