@@ -15,7 +15,7 @@ data <- subset(data, Date == "2/2/2007" | Date == "1/2/2007")
 data$timestamp <- strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
 
 # Plot
-png("plot4.png", width = 480, height = 480)
+png("plot4.png", width = 480, height = 480, bg="transparent")
 
 # Set up frame
 par(mfrow = c(2, 2))
