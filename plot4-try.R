@@ -33,7 +33,10 @@ par(mfrow = c(2, 2))
 #with(data, lines(timestamp, Sub_metering_3, col="blue"))
 #legend("topright", lty=1, bty="n", col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
+trydata <- data
+
 # 4th plot is v similar to plots 1 and 2
 with(data, plot(timestamp, Global_reactive_power, type="l", xlab="datetime"))
+with(data, plot(timestamp, Global_reactive_power, type="s", xlab="datetime", col="#0000ff22"))
 with(data, plot(timestamp, Global_reactive_power, type="s", xlab="datetime", col="#0000ff22"))
 dev.off()
