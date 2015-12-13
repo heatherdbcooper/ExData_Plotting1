@@ -17,7 +17,7 @@ data <- subset(data, Date == "2/2/2007" | Date == "1/2/2007")
 data$timestamp <- strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
 
 # Plot
-#png("plot4.png", width = 480, height = 480)
+png("plot4.png", width = 480, height = 480)
 
 # Set up frame
 par(mfrow = c(2, 2))
@@ -37,5 +37,4 @@ legend("topright", lty=1, bty="n", col=c("black", "red", "blue"), legend=c("Sub_
 
 # 4th plot is v similar to plots 1 and 2
 with(data, plot(timestamp, Global_reactive_power, type="l", xlab="datetime"))
-
-#dev.off()
+dev.off()
