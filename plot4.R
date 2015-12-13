@@ -7,7 +7,6 @@ cols <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Volta
 # Read in data
 data <- read.table(file="household_power_consumption.txt", sep=";", skip=1, header=FALSE, na.strings=c("?"))
 
-
 # Set column names
 names(data) <- cols
 
@@ -23,8 +22,8 @@ png("plot4.png", width = 480, height = 480)
 # Set up frame
 par(mfrow = c(2, 2))
 
-# 1st plot is just plot 2
-plot(data$timestamp, data$Global_active_power, type="l", xlab="", ylab='Global Active Power (kilowatts)')
+# 1st plot is just plot 2 without the "kilowatts" bit
+plot(data$timestamp, data$Global_active_power, type="l", xlab="", ylab="Global Active Power")
 
 # 2nd plot very similar
 plot(data$timestamp, data$Voltage, type="l", xlab="datetime", ylab='Voltage')
@@ -34,7 +33,7 @@ with(data, plot(timestamp, Sub_metering_1, main='', xlab='', ylab='Energy sub me
 with(data, lines(timestamp, Sub_metering_1, col="black"))
 with(data, lines(timestamp, Sub_metering_2, col="red"))
 with(data, lines(timestamp, Sub_metering_3, col="blue"))
-legend("topright", lty=1, col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", lty=1, bty="n", col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 # 4th plot is v similar to plots 1 and 2
 with(data, plot(timestamp, Global_reactive_power, type="l", xlab="datetime"))
