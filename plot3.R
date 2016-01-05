@@ -15,7 +15,7 @@ data <- subset(data, Date == "2/2/2007" | Date == "1/2/2007")
 data$timestamp <- strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
 
 # Plot
-png("plot3.png", width = 480, height = 480, bg="transparent")
+png("plot3.png", width = 480, height = 480)#, bg="transparent")
 with(data, plot(timestamp, Sub_metering_1, main='', xlab='', ylab='Energy sub metering', type="n"))
 with(data, lines(timestamp, Sub_metering_1, col="black"))
 with(data, lines(timestamp, Sub_metering_2, col="red"))
